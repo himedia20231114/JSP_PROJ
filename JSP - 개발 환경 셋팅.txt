@@ -30,8 +30,13 @@
 	java -jar lombok.jar        <== 롬북 설치 명령어  
 
    6. JSP_Proj    : Java EE 환경에서 개발 프로잭트 생성 
+
    7. 추가 설정 확인 
+	html (EUC-KR => UTF-8) ,    jsp ( EUC-KR ==> UTF-8 ) 
   
+	windows => preference => web => html 
+
+
    8. vscode 설치  <== FE 코드  
 
 
