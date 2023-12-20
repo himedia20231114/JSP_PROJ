@@ -17,7 +17,7 @@
 		conn = DriverManager.getConnection(url,"C##HR", "1234"); 
 		
 		// JSP 에서 출력 하라 
-		out.println ("DB 연결이 성공 했습니다. "); 
+//		out.println ("DB 연결이 성공 했습니다. "); 
 		
 	}catch (Exception e) {
 		//catch 블락 : try 블락의 오류가 있을때 만 작동됨  
@@ -28,8 +28,8 @@
 		e.printStackTrace(); 
 	}
 	
-	out.println ("<br><br> "); 
-	out.println ("프로그램이 정상 작동됩니다. "); 
+//	out.println ("<br><br> "); 
+//	out.println ("프로그램이 정상 작동됩니다. "); 
 	
 
 %>
