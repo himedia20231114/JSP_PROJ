@@ -9,7 +9,10 @@ Connection 객체 : DBMS (Oracle(XE), MSSQL(myDB), MySQL(myDB)의 DataBase에 �
 			ID, Password 
  
  Statement 객체 : DB에 SQL 쿼리를 보내는 객체
- 	- Connection 객체로 Statement 객체 생성   
+ 	- Connection 객체로 Statement 객체 생성 , conn.createStatement();
+ 	- stmt.execute(sql) ;  -- sql 변수의 SQL 쿼리 : insert, update, delete  <== commit 통켓에서 작동시킴 
+ 	  
+ 	  
  PreparedStatement 객체 : DB에 SQL 쿼리를 보내는 객체, 복잡한 쿼리인 경우 쉽게 처리됨 
  	- Connection 객체로 Statement 객체 생성
  	 
