@@ -30,16 +30,33 @@
 	java -jar lombok.jar        <== 롬북 설치 명령어  
 
    6. JSP_Proj    : Java EE 환경에서 개발 프로잭트 생성 
+	src\main\java
+	src\main\webapp\WEB-INF\lib	<== 외부 라이브러리 등록 : *.jar  ( *.class 파일의 모음) 
+			mssql-jdbc, mysql-connector , ojdbc11  
 
    7. 추가 설정 확인 
-	html (EUC-KR => UTF-8) ,    jsp ( EUC-KR ==> UTF-8 ) 
   
-	windows => preference => web => html 
-
-
    8. vscode 설치  <== FE 코드  
 
 
 JSP    : (Java Server Pages)  ==>*. java  ==>  Servlet ( 자바를 웹으로 출력시켜주는 페이지 ) 
 WAS ( Web Application Server) :  Tomcat 10 (무료)  ,  SSP ( Server Side Platform )  <== 서버에서 웹페이지를 만들어줌.
+
+Context Root : JSP_PROJ		http://localhost:8181/JSP_PROJ
+    - src\main\webapp
+
+web.xml	: 톰켓이 부팅전에 톰켓의 각종 설정을 로드 하는 파일 , src\main\webapp\WEB-INF\web.xml 
+     - 코드에 오류가 있을 경우 톰겟이 시작 되지 않는다. 
+     	
+
+
+
+
+
+
+
+
+
+
+
 	 
