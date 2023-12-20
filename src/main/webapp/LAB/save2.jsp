@@ -11,40 +11,45 @@
 
 <!-- 클라이언트에서 넘어오는 값을 받아서 출력 : request 객체  -->
 <% 
-	// http://localhost:8181/JSP_PROJ/guestboard/save.jsp?name=gildong&email=aaa%40aaa.com&subject=aa&contents=bb
-	//  파라미터 :  ?변수명=값&변수명=값&변수명=값
-	//  파라미터로 넘어오는 값은 모두 String    
-	
-	String na = request.getParameter("name"); 
-	String em = request.getParameter("email"); 
-	String sub = request.getParameter("subject"); 
-	String cont = request.getParameter("contents"); 
+
+	String name = request.getParameter("name"); 
+	String age = request.getParameter("age"); 
+	String weight = request.getParameter("weight"); 
+	String addr = request.getParameter("addr"); 
+	String phone = request.getParameter("phone"); 
 	
 %>
 
 <!-- DB Connecton 객체를 불러들임  -->
 <%@ include file ="../db_conn/db_conn_oracle.jsp" %>
 
-<!-- Statement 객체를 사용해서 DB에 저장 함.  -->
+<!-- PreparedStatement 객체를 사용해서 DB에 저장 함.  -->
 
 <%
 	//client 에서 받은 값을 DB에 저장함. 
 	String sql = null ; 		//sql <== SQL 쿼리를 저장하는 변수
-	Statement stmt = null ; 	//stmt <== sql 퀄리를 담아서 DB에 적용하는 객체 
+	PreparedStatement pstmt = null ; 	//stmt <== sql 퀄리를 담아서 DB에 적용하는 객체 
 
-	sql = "insert into guestboard (name, email, subject, content)"; 
-	sql = sql + " values ('" + na + "','" + em + "','" + sub + "','" + cont + "')";
+	sql = "insert into mem (name, age, weight, addr , phone)"; 
+	sql = sql + " values (?, ?, ?, ?, ?)";
 	
-	out.println (sql); 
+	//out.println (sql); 
 	
 	//Statement 객체를 활성화 : Connection 객체로 Statement 객체를 생성함. 
-	stmt = conn.createStatement(); 
+	pstmt = conn.prepareStatement(sql); 
 	
+	// ? 변수에 값을 할당 
+	pstmt.setString(1, name); 
+	pstmt.setString(2, age); 
+	pstmt.setString(3, weight); 
+	pstmt.setString(4, addr); 
+	pstmt.setString(5, phone); 
+
 	// stmt 를 사용해서 DB에 값을 insert  
 	try {
 		//DB에 값은 넣을때 오류가 발생되더라도 전체 프로그램이 중지되지 않도록 설정 
-		stmt.execute(sql); 		//DataBase에 저장완료
-			// insert, update, delete 
+		pstmt.executeUpdate(); 		//DataBase에 저장완료
+		
 		
 	}catch (Exception e) {
 		
@@ -54,11 +59,6 @@
 
 
 %>
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -71,13 +71,9 @@
 
 	<p><p><p>
 	<!--  변수에 담긴값을 출력  -->
-	<h2> 넘어오는 변수 값 출력 </h2>
-	<%= na %> <br> 
-	<%= em %> <br>
-	<%= sub %> <br> 
-	<%= cont %> <br> 
 
- 	<h1>Statement </h1>
+
+ 	<h1>PreparedStatement </h1>
 
 </body>
 </html>
