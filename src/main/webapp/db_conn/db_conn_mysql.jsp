@@ -12,7 +12,7 @@
  		Class.forName(driver); 
  		conn = DriverManager.getConnection(url, "root" , "1234"); 
  		
- 		out.println ("성공적으로 접속 했습니다. - MySQL"); 
+ 	//	out.println ("성공적으로 접속 했습니다. - MySQL"); 
  		
  	}catch (Exception e) {
  		

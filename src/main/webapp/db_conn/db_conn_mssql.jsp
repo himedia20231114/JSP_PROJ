@@ -14,7 +14,7 @@
 		conn = DriverManager.getConnection(url, "sa", "1234"); 
 			
 		// conn이 오류가 없으면 작동됨 	
-		out.println ("MSSQL 서버에 <b>성공</b>적으로 접속 했습니다. <br> "); 
+//		out.println ("MSSQL 서버에 <b>성공</b>적으로 접속 했습니다. <br> "); 
 		
 		
 	}catch (Exception e) {
