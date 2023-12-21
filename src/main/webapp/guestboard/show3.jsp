@@ -9,10 +9,10 @@
 	// DB에서 가져온 레코드셋을 rs 에 담은후 ArrayList 에 저장후 출력 
 	
 	//선언만 된 상태 
-	ArrayList name = new ArrayList(); 		// 이름
-	ArrayList email = new ArrayList(); 		// 메일
-	ArrayList subject = new ArrayList(); 	// 제목
-	ArrayList content = new ArrayList(); 	// 내용 
+	ArrayList<String> name = new ArrayList<>(); 		// 이름
+	ArrayList<String> email = new ArrayList<>(); 		// 메일
+	ArrayList<String> subject = new ArrayList<>(); 		// 제목
+	ArrayList<String> content = new ArrayList<>(); 		// 내용 
 	
 	//객체 변수 선언 
 	String sql = null ; 
