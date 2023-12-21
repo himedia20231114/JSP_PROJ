@@ -19,7 +19,7 @@
 			
 		try {
 			Class.forName(driver); 	//오라클 드라이버를 로드함 
-			conn = DriverManager.getConnection (url, "C##HR2", "1234"); 
+			conn = DriverManager.getConnection (url, "C##HR", "1234"); 
 
 		}catch (Exception e) {
 			e.printStackTrace(); 
